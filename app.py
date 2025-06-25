@@ -2,8 +2,8 @@ import streamlit as st
 
 def choose(question, opts, correct):
     st.write(question)
-    choice = st.radio("", list(opts.keys()), format_func=lambda x: f"{x}: {opts[x]}")
-    if st.button("确认"):
+    choice = st.radio("请选择：", list(opts.keys()), format_func=lambda x: f"{x}. {opts[x]}")
+    if st.button("确认", key=question):
         if choice != correct:
             st.error("👿 对方红温，局面瞬间失控……")
             if st.button("🔁 重新开始"):
@@ -14,7 +14,6 @@ def choose(question, opts, correct):
 
 def main():
     st.title("🍺 瓶盖飞进菜里 · 互动剧本")
-
     st.write("你开瓶盖，“啪”一声，瓶盖飞到对方的菜里。")
     st.write("对方：**“ber哥们咋开的瓶盖啊？都开我菜里啦！”**")
 
@@ -65,6 +64,7 @@ def main():
     st.write("对方：这多不好意思，谢谢昂")
 
     st.write("对方：你说这扯不扯？")
+    st.success("🎵 BGM: ‘提着昨日种种千辛万苦…’")
     if st.button("回应“这真挺扯的哈哈”"):
         st.write("我：这真挺扯的哈哈")
     else:
@@ -89,10 +89,9 @@ def main():
         "1"
     )
     st.write(f"我：{final_thanks}")
-
-    st.write("🙏🙏")
-    st.write("🎵 BGM: ‘提着昨日种种千辛万苦…’")
     st.balloons()
+    st.success("🎉 剧本结束，完美落幕！")
+
     if st.button("🔁 重新开始"):
         st.experimental_rerun()
 
