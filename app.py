@@ -54,11 +54,11 @@ elif st.session_state.step == 0:
     form_choice(
         prompt="你要怎么回应？",
         options={
-            "1": "对不起哥们，我给你换一盘吧，实在对不住。",
+            "1": "开个瓶盖都不行？我还不能吃饭了？",
             "2": "怪我咯？你自己坐太近了吧。",
-            "3": "开个瓶盖都不行？我还不能吃饭了？"
+            "3": "对不起哥们，我给你换一盘吧，实在对不住。"
         },
-        correct_key="1",
+        correct_key="3",
         key_prefix="step0"
     )
 
@@ -94,11 +94,11 @@ elif st.session_state.step == 3:
     form_choice(
         prompt="你会怎么做？",
         options={
-            "1": "哥们，我这儿正好有烟！你先抽着",
-            "2": "这点事也值得叫服务员？自己去买呗。",
+            "1": "这点事也值得叫服务员？自己去买呗。",
+            "2": "哥们，我这儿正好有烟！你先抽着",
             "3": "你抽不抽关我啥事？"
         },
-        correct_key="1",
+        correct_key="2",
         key_prefix="step3"
     )
 
